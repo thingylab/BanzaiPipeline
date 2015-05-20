@@ -1,0 +1,8 @@
+C:\dev\BanzaiPipeline\Pipeline\obj\x86\Debug\Pipeline.exe
+C:\dev\BanzaiPipeline\Pipeline\obj\x86\Debug\Pipeline.csprojResolveAssemblyReference.cache
+C:\dev\BanzaiPipeline\Pipeline\bin\Debug\Pipeline.exe
+C:\dev\BanzaiPipeline\Pipeline\bin\Debug\Pipeline.pdb
+C:\dev\BanzaiPipeline\Pipeline\bin\Debug\Machine.Specifications.Clr4.dll
+C:\dev\BanzaiPipeline\Pipeline\bin\Debug\Machine.Specifications.dll
+C:\dev\BanzaiPipeline\Pipeline\bin\Debug\Machine.Specifications.Should.dll
+C:\dev\BanzaiPipeline\Pipeline\obj\x86\Debug\Pipeline.pdb
