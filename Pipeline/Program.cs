@@ -16,7 +16,12 @@ namespace Pipeline
                 .WithStage(CountCharacters)
                 .Finally(MultiplyByTwo);
 
-            pipeline.Run(source.Token);
+		    MyStatus res;
+
+		    foreach (var i in pipeline.Run(out res, source.Token))
+		    {
+		        Console.WriteLine("Result: {0}", i);
+		    }
 
 		    Console.ReadLine();
 		}
@@ -30,7 +35,7 @@ namespace Pipeline
 	    {
 	        var rnd = new Random();
 
-	        for (int i = 0; i < 1000000; i++)
+	        for (int i = 0; i < 50; i++)
 	        {
 	            var guid = Guid.NewGuid().ToString();
 	            var str = guid.Substring(rnd.Next(guid.Length));

@@ -19,22 +19,15 @@ namespace Pipeline
             return new OriginalPipelineBuilder();
         }
 
-        public Task<TStatus> Run(out IEnumerable<TOut> result)
-        {
-            var cts = new CancellationTokenSource();
-
-            return Run(result, cts.Token);
-        }
-
-        public Task<TStatus> Run(out IEnumerable<TOut> result, CancellationToken token)
+        public IEnumerable<TOut> Run(out TStatus status, CancellationToken ct)
         {
             var taskFactory = new TaskFactory(TaskCreationOptions.LongRunning, TaskContinuationOptions.None);
             
             var tasks = _stages.Select(stage => stage.Start(taskFactory)).ToArray();
 
-            Task.WaitAll(tasks);
+            status = new TStatus();
 
-            return Task.FromResult(new TStatus());
+            return (_stages.Last() as IProducer<TOut>).OutputCollection.GetConsumingEnumerable();
         }
 	}
 }
