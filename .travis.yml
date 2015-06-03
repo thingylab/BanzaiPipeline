@@ -1,2 +1,2 @@
 language: csharp
-solution: Pipeline.sln
+solution: .\src\Pipeline.sln
